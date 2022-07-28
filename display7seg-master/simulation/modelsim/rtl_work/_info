@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/fvura/Desktop/programs quartus/display7seg/simulation/modelsim
+vdisplay7seg_main
+!s110 1567154524
+!i10b 1
+!s100 8P0URH6HHeLi20m?b0I`c3
+IY?T115Ye^D_1Z]fm>BdZa1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1567154477
+8C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_main.v
+FC:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_main.v
+L0 3
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z3 !s108 1567154524.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/display7seg|C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_main.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work {+incdir+C:/Users/fvura/Desktop/programs quartus/display7seg}
+Z6 tCvgOpt 0
+vdisplay7seg_testbench
+!s110 1567154525
+!i10b 1
+!s100 JLNQDX5ABC[4o>fO@]iT31
+I<V9S<ZbV7AVbBE^]i3I`f1
+R1
+R0
+w1566992701
+8C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_testbench.v
+FC:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_testbench.v
+L0 4
+R2
+r1
+!s85 0
+31
+R3
+!s107 C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/display7seg|C:/Users/fvura/Desktop/programs quartus/display7seg/display7seg_testbench.v|
+!i113 1
+R4
+R5
+R6
