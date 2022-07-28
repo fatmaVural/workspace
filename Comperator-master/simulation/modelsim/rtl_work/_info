@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/fvura/Desktop/programs quartus/comperator/simulation/modelsim
+vcomperator_main
+Z1 !s110 1567062190
+!i10b 1
+!s100 2o^gbJ3PH<znM^DR[LamU3
+INM6GWlHMDF;DY7>l2b_2m2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1566983375
+8C:/Users/fvura/Desktop/programs quartus/comperator/comperator_main.v
+FC:/Users/fvura/Desktop/programs quartus/comperator/comperator_main.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1567062189.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/comperator/comperator_main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/comperator|C:/Users/fvura/Desktop/programs quartus/comperator/comperator_main.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work {+incdir+C:/Users/fvura/Desktop/programs quartus/comperator}
+Z6 tCvgOpt 0
+vcomperator_testbench
+R1
+!i10b 1
+!s100 P^AW@cozzD0LfQCCd=7LT1
+ISjP_0Y@R7<<Lan@<[Tn]f1
+R2
+R0
+w1566983376
+8C:/Users/fvura/Desktop/programs quartus/comperator/comperator_testbench.v
+FC:/Users/fvura/Desktop/programs quartus/comperator/comperator_testbench.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1567062190.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/comperator/comperator_testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/comperator|C:/Users/fvura/Desktop/programs quartus/comperator/comperator_testbench.v|
+!i113 1
+R4
+R5
+R6
