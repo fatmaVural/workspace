@@ -1,0 +1,20 @@
+Analysis & Synthesis Status : Successful - Fri Aug 30 10:54:21 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : decoder7segment
+Top-level Entity Name : decoder7segment_main
+Family : Arria II GX
+Logic utilization : N/A
+    Combinational ALUTs : 7
+    Memory ALUTs : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 11
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 18-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0
+Total DLLs : 0
