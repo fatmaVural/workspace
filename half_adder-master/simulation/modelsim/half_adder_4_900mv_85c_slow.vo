@@ -1,0 +1,169 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "07/24/2019 13:29:32"
+
+// 
+// Device: Altera EP2AGX45CU17C4 Package UFBGA358
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module half_main (
+	a1,
+	b1,
+	sum1,
+	carry1);
+input 	a1;
+input 	b1;
+output 	sum1;
+output 	carry1;
+
+// Design Ports Information
+// sum1	=>  Location: PIN_Y13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// carry1	=>  Location: PIN_U14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// a1	=>  Location: PIN_Y12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// b1	=>  Location: PIN_U15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("half_adder_4_900mv_85c_v_slow.sdo");
+// synopsys translate_on
+
+wire \sum1~output_o ;
+wire \carry1~output_o ;
+wire \a1~input_o ;
+wire \b1~input_o ;
+wire \sum1~0_combout ;
+wire \carry1~0_combout ;
+
+
+// Location: IOOBUF_X5_Y0_N67
+arriaii_io_obuf \sum1~output (
+	.i(\sum1~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\sum1~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \sum1~output .bus_hold = "false";
+defparam \sum1~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y0_N36
+arriaii_io_obuf \carry1~output (
+	.i(!\carry1~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\carry1~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \carry1~output .bus_hold = "false";
+defparam \carry1~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X7_Y0_N63
+arriaii_io_ibuf \a1~input (
+	.i(a1),
+	.ibar(gnd),
+	.o(\a1~input_o ));
+// synopsys translate_off
+defparam \a1~input .bus_hold = "false";
+defparam \a1~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X7_Y0_N94
+arriaii_io_ibuf \b1~input (
+	.i(b1),
+	.ibar(gnd),
+	.o(\b1~input_o ));
+// synopsys translate_off
+defparam \b1~input .bus_hold = "false";
+defparam \b1~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X7_Y1_N2
+arriaii_lcell_comb \sum1~0 (
+// Equation(s):
+// \sum1~0_combout  = ( \b1~input_o  & ( !\a1~input_o  ) ) # ( !\b1~input_o  & ( \a1~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\a1~input_o ),
+	.datae(!\b1~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\sum1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \sum1~0 .extended_lut = "off";
+defparam \sum1~0 .lut_mask = 64'h00FFFF0000FFFF00;
+defparam \sum1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X7_Y1_N24
+arriaii_lcell_comb \carry1~0 (
+// Equation(s):
+// \carry1~0_combout  = ( \b1~input_o  & ( !\a1~input_o  ) ) # ( !\b1~input_o  )
+
+	.dataa(!\a1~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\b1~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\carry1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \carry1~0 .extended_lut = "off";
+defparam \carry1~0 .lut_mask = 64'hFFFFAAAAFFFFAAAA;
+defparam \carry1~0 .shared_arith = "off";
+// synopsys translate_on
+
+assign sum1 = \sum1~output_o ;
+
+assign carry1 = \carry1~output_o ;
+
+endmodule

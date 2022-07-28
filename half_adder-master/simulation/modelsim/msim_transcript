@@ -1,0 +1,62 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do half_adder_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/fvura/Desktop/programs\ quartus/half\ adder {C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:30:15 on Jul 24,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/fvura/Desktop/programs quartus/half adder" C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v 
+# -- Compiling module half_main
+# 
+# Top level modules:
+# 	half_main
+# End time: 13:30:15 on Jul 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/fvura/Desktop/programs\ quartus/half\ adder {C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:30:15 on Jul 24,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/fvura/Desktop/programs quartus/half adder" C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v 
+# -- Compiling module half_adder
+# 
+# Top level modules:
+# 	half_adder
+# End time: 13:30:15 on Jul 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/fvura/Desktop/programs\ quartus/half\ adder {C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:30:15 on Jul 24,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/fvura/Desktop/programs quartus/half adder" C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v 
+# -- Compiling module half_adder_test
+# 
+# Top level modules:
+# 	half_adder_test
+# End time: 13:30:15 on Jul 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs="+acc"  half_adder_test
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs=""+acc"" half_adder_test 
+# Start time: 13:30:16 on Jul 24,2019
+# Loading work.half_adder_test
+# Loading work.half_main
+# Loading work.half_adder
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v(26)
+#    Time: 400 ns  Iteration: 0  Instance: /half_adder_test
+# Break in Module half_adder_test at C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v line 26
+# End time: 14:16:07 on Jul 24,2019, Elapsed time: 0:45:51
+# Errors: 0, Warnings: 0

@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/half adder/db/half_adder.cbx.xml
+design_name = half_main
+instance = comp, \sum1~output , sum1~output, half_main, 1
+instance = comp, \carry1~output , carry1~output, half_main, 1
+instance = comp, \a1~input , a1~input, half_main, 1
+instance = comp, \b1~input , b1~input, half_main, 1
+instance = comp, \sum1~0 , sum1~0, half_main, 1
+instance = comp, \carry1~0 , carry1~0, half_main, 1

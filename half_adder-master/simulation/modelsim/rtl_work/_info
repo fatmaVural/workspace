@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/fvura/Desktop/programs quartus/half adder/simulation/modelsim
+vhalf_adder
+Z1 !s110 1563964215
+!i10b 1
+!s100 hiDhS@l:Jbb<ML`cc00472
+ISk5YWWmZYb6=_8HgbTSYn1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1563962864
+8C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v
+FC:/Users/fvura/Desktop/programs quartus/half adder/half_module.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1563964215.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/half adder|C:/Users/fvura/Desktop/programs quartus/half adder/half_module.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/fvura/Desktop/programs quartus/half adder}
+Z7 tCvgOpt 0
+vhalf_adder_test
+R1
+!i10b 1
+!s100 ae[;o3WP]FZ78L_KAfeCC0
+IS<oCA]a^mZ:DMa^_TDaYG2
+R2
+R0
+w1563963060
+8C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v
+FC:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/half adder|C:/Users/fvura/Desktop/programs quartus/half adder/half_adder_test.v|
+!i113 1
+R5
+R6
+R7
+vhalf_main
+R1
+!i10b 1
+!s100 95n3ggK6Hd_z>0aE[4P9@2
+I>hIb_jD=Pk6ineWC>FAC40
+R2
+R0
+w1563964129
+8C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v
+FC:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/half adder|C:/Users/fvura/Desktop/programs quartus/half adder/half_adder.v|
+!i113 1
+R5
+R6
+R7
