@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_model.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_main.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_tb.v
+source_file = 1, C:/Users/fvura/Desktop/programs quartus/decoder2to4/db/decoder2to4.cbx.xml
+design_name = main
+instance = comp, \Y0_m~output , Y0_m~output, main, 1
+instance = comp, \Y1_m~output , Y1_m~output, main, 1
+instance = comp, \Y2_m~output , Y2_m~output, main, 1
+instance = comp, \Y3_m~output , Y3_m~output, main, 1
+instance = comp, \A0_m~input , A0_m~input, main, 1
+instance = comp, \A1_m~input , A1_m~input, main, 1
+instance = comp, \deco1|Y0 , deco1|Y0, main, 1
+instance = comp, \deco1|Y1~0 , deco1|Y1~0, main, 1
+instance = comp, \deco1|Y1~1 , deco1|Y1~1, main, 1
+instance = comp, \deco1|Y1~2 , deco1|Y1~2, main, 1

@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/fvura/Desktop/programs quartus/decoder2to4/simulation/modelsim
+vdecoder2to4_model
+Z1 !s110 1564047212
+!i10b 1
+!s100 aAH9RofaemX7JMIaolC6_3
+InSNHVeZbz5JR^_3;Q_<G60
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1564043815
+8C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_model.v
+FC:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_model.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1564047211.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_model.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/decoder2to4|C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_model.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work {+incdir+C:/Users/fvura/Desktop/programs quartus/decoder2to4}
+Z6 tCvgOpt 0
+vdecoder2to4_tb
+R1
+!i10b 1
+!s100 425i^`A=zUdFE[6f1nhM]1
+IfXUnX;RPYfZzcfCeZ[0Bc3
+R2
+R0
+w1564047184
+8C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_tb.v
+FC:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z7 !s108 1564047212.000000
+!s107 C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/decoder2to4|C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_tb.v|
+!i113 1
+R4
+R5
+R6
+vmain
+R1
+!i10b 1
+!s100 ;8:JRo4Xk42bmfzNIDlUI1
+I?H8I2jC6j=2=9TcNZogea3
+R2
+R0
+w1564046166
+8C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_main.v
+FC:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_main.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/fvura/Desktop/programs quartus/decoder2to4|C:/Users/fvura/Desktop/programs quartus/decoder2to4/decoder2to4_main.v|
+!i113 1
+R4
+R5
+R6

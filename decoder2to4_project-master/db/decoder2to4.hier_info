@@ -1,0 +1,24 @@
+|main
+A0_m => A0_m.IN1
+A1_m => A1_m.IN1
+Y0_m <= decoder2to4_model:deco1.Y0
+Y1_m <= decoder2to4_model:deco1.Y1
+Y2_m <= decoder2to4_model:deco1.Y2
+Y3_m <= decoder2to4_model:deco1.Y3
+
+
+|main|decoder2to4_model:deco1
+A0 => Y2.IN0
+A0 => Y3.IN0
+A0 => Y0.IN0
+A0 => Y1.IN0
+A1 => Y1.IN1
+A1 => Y3.IN1
+A1 => Y0.IN1
+A1 => Y2.IN1
+Y0 <= Y0.DB_MAX_OUTPUT_PORT_TYPE
+Y1 <= Y1.DB_MAX_OUTPUT_PORT_TYPE
+Y2 <= Y2.DB_MAX_OUTPUT_PORT_TYPE
+Y3 <= Y3.DB_MAX_OUTPUT_PORT_TYPE
+
+

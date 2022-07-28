@@ -1,0 +1,257 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "07/25/2019 12:19:21"
+
+// 
+// Device: Altera EP2AGX45CU17C4 Package UFBGA358
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module main (
+	A0_m,
+	A1_m,
+	Y0_m,
+	Y1_m,
+	Y2_m,
+	Y3_m);
+input 	A0_m;
+input 	A1_m;
+output 	Y0_m;
+output 	Y1_m;
+output 	Y2_m;
+output 	Y3_m;
+
+// Design Ports Information
+// Y0_m	=>  Location: PIN_U15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Y1_m	=>  Location: PIN_V13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Y2_m	=>  Location: PIN_Y12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Y3_m	=>  Location: PIN_U14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A0_m	=>  Location: PIN_W13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A1_m	=>  Location: PIN_V14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("decoder2to4_4_900mv_85c_v_slow.sdo");
+// synopsys translate_on
+
+wire \Y0_m~output_o ;
+wire \Y1_m~output_o ;
+wire \Y2_m~output_o ;
+wire \Y3_m~output_o ;
+wire \A0_m~input_o ;
+wire \A1_m~input_o ;
+wire \deco1|Y0~combout ;
+wire \deco1|Y1~0_combout ;
+wire \deco1|Y1~1_combout ;
+wire \deco1|Y1~2_combout ;
+
+
+// Location: IOOBUF_X7_Y0_N98
+arriaii_io_obuf \Y0_m~output (
+	.i(!\deco1|Y0~combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Y0_m~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Y0_m~output .bus_hold = "false";
+defparam \Y0_m~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y0_N36
+arriaii_io_obuf \Y1_m~output (
+	.i(\deco1|Y1~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Y1_m~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Y1_m~output .bus_hold = "false";
+defparam \Y1_m~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y0_N67
+arriaii_io_obuf \Y2_m~output (
+	.i(\deco1|Y1~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Y2_m~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Y2_m~output .bus_hold = "false";
+defparam \Y2_m~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y0_N36
+arriaii_io_obuf \Y3_m~output (
+	.i(\deco1|Y1~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Y3_m~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Y3_m~output .bus_hold = "false";
+defparam \Y3_m~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X5_Y0_N1
+arriaii_io_ibuf \A0_m~input (
+	.i(A0_m),
+	.ibar(gnd),
+	.o(\A0_m~input_o ));
+// synopsys translate_off
+defparam \A0_m~input .bus_hold = "false";
+defparam \A0_m~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X5_Y0_N94
+arriaii_io_ibuf \A1_m~input (
+	.i(A1_m),
+	.ibar(gnd),
+	.o(\A1_m~input_o ));
+// synopsys translate_off
+defparam \A1_m~input .bus_hold = "false";
+defparam \A1_m~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X6_Y1_N20
+arriaii_lcell_comb \deco1|Y0 (
+// Equation(s):
+// \deco1|Y0~combout  = ( \A1_m~input_o  ) # ( !\A1_m~input_o  & ( \A0_m~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\A0_m~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\A1_m~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\deco1|Y0~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \deco1|Y0 .extended_lut = "off";
+defparam \deco1|Y0 .lut_mask = 64'h0F0F0F0FFFFFFFFF;
+defparam \deco1|Y0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X6_Y1_N26
+arriaii_lcell_comb \deco1|Y1~0 (
+// Equation(s):
+// \deco1|Y1~0_combout  = ( \A1_m~input_o  & ( !\A0_m~input_o  ) )
+
+	.dataa(!\A0_m~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\A1_m~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\deco1|Y1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \deco1|Y1~0 .extended_lut = "off";
+defparam \deco1|Y1~0 .lut_mask = 64'h00000000AAAAAAAA;
+defparam \deco1|Y1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X6_Y1_N28
+arriaii_lcell_comb \deco1|Y1~1 (
+// Equation(s):
+// \deco1|Y1~1_combout  = ( !\A1_m~input_o  & ( \A0_m~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\A0_m~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\A1_m~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\deco1|Y1~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \deco1|Y1~1 .extended_lut = "off";
+defparam \deco1|Y1~1 .lut_mask = 64'h0F0F0F0F00000000;
+defparam \deco1|Y1~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X6_Y1_N32
+arriaii_lcell_comb \deco1|Y1~2 (
+// Equation(s):
+// \deco1|Y1~2_combout  = ( \A1_m~input_o  & ( \A0_m~input_o  ) )
+
+	.dataa(!\A0_m~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\A1_m~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\deco1|Y1~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \deco1|Y1~2 .extended_lut = "off";
+defparam \deco1|Y1~2 .lut_mask = 64'h0000000055555555;
+defparam \deco1|Y1~2 .shared_arith = "off";
+// synopsys translate_on
+
+assign Y0_m = \Y0_m~output_o ;
+
+assign Y1_m = \Y1_m~output_o ;
+
+assign Y2_m = \Y2_m~output_o ;
+
+assign Y3_m = \Y3_m~output_o ;
+
+endmodule

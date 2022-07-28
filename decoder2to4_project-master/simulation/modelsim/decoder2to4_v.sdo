@@ -1,0 +1,145 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+
+// 
+// Device: Altera EP2AGX45CU17C4 Package UFBGA358
+// 
+
+//
+// This file contains Slow Corner delays for the design using part EP2AGX45CU17C4,
+// with speed grade 4, core voltage 0.9VmV, and temperature 85 Celsius
+//
+
+// 
+// This SDF file should be used for ModelSim-Altera (Verilog) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "main")
+  (DATE "07/25/2019 12:19:22")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus Prime")
+  (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "arriaii_io_obuf")
+    (INSTANCE Y0_m\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (293:293:293) (282:282:282))
+        (IOPATH i o (2115:2115:2115) (2088:2088:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_obuf")
+    (INSTANCE Y1_m\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (335:335:335) (359:359:359))
+        (IOPATH i o (2103:2103:2103) (2112:2112:2112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_obuf")
+    (INSTANCE Y2_m\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (312:312:312) (315:315:315))
+        (IOPATH i o (2201:2201:2201) (2215:2215:2215))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_obuf")
+    (INSTANCE Y3_m\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (328:328:328) (337:337:337))
+        (IOPATH i o (2103:2103:2103) (2112:2112:2112))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE A0_m\~input)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (488:488:488) (623:623:623))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE A1_m\~input)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (409:409:409) (549:549:549))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE deco1\|Y0)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (3717:3717:3717) (3750:3750:3750))
+        (PORT dataf (3783:3783:3783) (3803:3803:3803))
+        (IOPATH datac combout (274:274:274) (265:265:265))
+        (IOPATH dataf combout (86:86:86) (81:81:81))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE deco1\|Y1\~0)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3706:3706:3706) (3736:3736:3736))
+        (PORT dataf (3786:3786:3786) (3808:3808:3808))
+        (IOPATH dataa combout (420:420:420) (424:424:424))
+        (IOPATH dataf combout (88:88:88) (74:74:74))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE deco1\|Y1\~1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (3714:3714:3714) (3747:3747:3747))
+        (PORT dataf (3791:3791:3791) (3812:3812:3812))
+        (IOPATH datac combout (274:274:274) (265:265:265))
+        (IOPATH dataf combout (86:86:86) (81:81:81))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE deco1\|Y1\~2)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3708:3708:3708) (3738:3738:3738))
+        (PORT dataf (3798:3798:3798) (3816:3816:3816))
+        (IOPATH dataa combout (415:415:415) (412:412:412))
+        (IOPATH dataf combout (86:86:86) (81:81:81))
+      )
+    )
+  )
+)
