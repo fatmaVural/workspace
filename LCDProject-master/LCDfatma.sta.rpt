@@ -1,0 +1,1478 @@
+TimeQuest Timing Analyzer report for LCDfatma
+Wed Oct 09 15:19:24 2019
+Quartus II 64-Bit Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Setup: 'ac_state.shift'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'ac_state.shift'
+ 15. Slow Model Minimum Pulse Width: 'clk'
+ 16. Slow Model Minimum Pulse Width: 'ac_state.shift'
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'clk'
+ 25. Fast Model Setup: 'ac_state.shift'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Hold: 'ac_state.shift'
+ 28. Fast Model Minimum Pulse Width: 'clk'
+ 29. Fast Model Minimum Pulse Width: 'ac_state.shift'
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Multicorner Timing Analysis Summary
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; LCDfatma                                                        ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C35F672C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                         ;
++----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
+; Clock Name     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets            ;
++----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
+; ac_state.shift ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ac_state.shift } ;
+; clk            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }            ;
++----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 262.19 MHz ; 262.19 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------+
+; Slow Model Setup Summary                ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -2.814 ; -140.257      ;
+; ac_state.shift ; -1.984 ; -13.439       ;
++----------------+--------+---------------+
+
+
++-----------------------------------------+
+; Slow Model Hold Summary                 ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -2.103 ; -2.103        ;
+; ac_state.shift ; 0.271  ; 0.000         ;
++----------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-----------------------------------------+
+; Slow Model Minimum Pulse Width Summary  ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -1.380 ; -63.380       ;
+; ac_state.shift ; 0.500  ; 0.000         ;
++----------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                   ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.814 ; cnt[2]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.814 ; cnt[2]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 3.854      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.809 ; cnt[2]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.850      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.660 ; cnt[3]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 3.700      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.655 ; cnt[3]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.696      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.637 ; cnt[10]   ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.002      ; 3.675      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.632 ; cnt[10]   ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.671      ;
+; -2.591 ; cnt[2]    ; conta[0]                       ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Func_Disp_Addr_cmd_40 ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_15               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_14               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_13               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_12               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_11               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_10               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_9                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Lett_8                ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.Turn_on               ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.591 ; cnt[2]    ; ac_state.init                  ; clk          ; clk         ; 1.000        ; 0.003      ; 3.630      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.579 ; cnt[1]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 3.619      ;
+; -2.577 ; cnt[2]    ; ac_state.wait_cnt              ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.shift                 ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_31               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_30               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_29               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_28               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_27               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_26               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_25               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_24               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_23               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.577 ; cnt[2]    ; ac_state.Lett_22               ; clk          ; clk         ; 1.000        ; 0.000      ; 3.613      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.574 ; cnt[1]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.615      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.554 ; cnt[9]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 3.594      ;
+; -2.549 ; cnt[9]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.590      ;
+; -2.549 ; cnt[9]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 3.590      ;
+; -2.549 ; cnt[9]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.590      ;
+; -2.549 ; cnt[9]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 3.590      ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'ac_state.shift'                                                                                             ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node     ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; -1.984 ; ac_state.Lett_4                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 2.548      ;
+; -1.846 ; ac_state.Lett_4                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.701      ; 2.555      ;
+; -1.805 ; ac_state.Lett_4                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 2.552      ;
+; -1.678 ; ac_state.Lett_2                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 2.241      ;
+; -1.643 ; ac_state.Lett_1                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.503      ; 2.318      ;
+; -1.540 ; ac_state.Lett_2                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 2.248      ;
+; -1.499 ; ac_state.Lett_2                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 2.245      ;
+; -1.460 ; ac_state.Lett_21               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.504      ; 2.136      ;
+; -1.454 ; ac_state.Lett_5                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 2.017      ;
+; -1.426 ; ac_state.Lett_1                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 2.172      ;
+; -1.316 ; ac_state.Lett_5                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 2.024      ;
+; -1.292 ; ac_state.Lett_21               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.701      ; 2.001      ;
+; -1.275 ; ac_state.Lett_5                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 2.021      ;
+; -1.274 ; ac_state.Lett_18               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.504      ; 1.950      ;
+; -1.271 ; ac_state.init                  ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.702      ; 1.981      ;
+; -1.260 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.702      ; 1.970      ;
+; -1.243 ; ac_state.Lett_21               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.990      ;
+; -1.237 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[5]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.478      ; 1.897      ;
+; -1.227 ; ac_state.init                  ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.974      ;
+; -1.223 ; ac_state.wait_cnt              ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.705      ; 1.936      ;
+; -1.216 ; ac_state.Func_Disp_Addr_cmd_40 ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.963      ;
+; -1.179 ; ac_state.wait_cnt              ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.703      ; 1.929      ;
+; -1.167 ; ac_state.Lett_17               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.503      ; 1.842      ;
+; -1.127 ; ac_state.Lett_20               ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.691      ;
+; -1.123 ; ac_state.Lett_4                ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 1.869      ;
+; -1.119 ; ac_state.Turn_on               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.702      ; 1.829      ;
+; -1.080 ; ac_state.Turn_on               ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.827      ;
+; -1.058 ; ac_state.Lett_18               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.805      ;
+; -1.031 ; ac_state.Turn_on               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.505      ; 1.708      ;
+; -1.020 ; ac_state.Lett_19               ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.480      ; 1.828      ;
+; -1.010 ; ac_state.init                  ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.701      ; 1.575      ;
+; -0.989 ; ac_state.Lett_20               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.701      ; 1.698      ;
+; -0.980 ; ac_state.Lett_1                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.688      ;
+; -0.958 ; ac_state.wait_cnt              ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.489      ; 1.768      ;
+; -0.951 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.698      ;
+; -0.951 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.485      ; 1.757      ;
+; -0.950 ; ac_state.Lett_17               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 1.696      ;
+; -0.948 ; ac_state.Lett_20               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.695      ;
+; -0.911 ; ac_state.Two_lines             ; DB[5]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.477      ; 1.570      ;
+; -0.881 ; ac_state.Two_lines             ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 1.627      ;
+; -0.837 ; ac_state.Lett_3                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.504      ; 1.513      ;
+; -0.814 ; ac_state.Turn_on               ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.561      ;
+; -0.670 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.701      ; 1.379      ;
+; -0.626 ; ac_state.Func_Disp_Addr_cmd_00 ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 1.372      ;
+; -0.625 ; ac_state.Two_lines             ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 1.371      ;
+; -0.620 ; ac_state.Lett_3                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 1.367      ;
+; -0.596 ; ac_state.wait_cnt              ; RW$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.478      ; 1.257      ;
+; -0.573 ; ac_state.Lett_1                ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.479      ; 1.380      ;
+; -0.438 ; ac_state.Lett_4                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.504      ; 1.114      ;
+; -0.434 ; ac_state.Lett_17               ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.479      ; 1.241      ;
+; -0.407 ; ac_state.Lett_18               ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 0.971      ;
+; -0.407 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.486      ; 1.214      ;
+; -0.225 ; ac_state.Lett_19               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.700      ; 0.972      ;
+; -0.225 ; ac_state.Lett_21               ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.699      ; 0.971      ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                           ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+; -2.103 ; ac_state.shift                 ; ac_state.wait_cnt              ; ac_state.shift ; clk         ; 0.000        ; 2.688      ; 1.101      ;
+; -1.603 ; ac_state.shift                 ; ac_state.wait_cnt              ; ac_state.shift ; clk         ; -0.500       ; 2.688      ; 1.101      ;
+; 0.391  ; cnt[0]                         ; cnt[0]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; ac_state.wait_cnt              ; ac_state.wait_cnt              ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; conta[2]                       ; conta[2]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; conta[0]                       ; conta[0]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; conta[1]                       ; conta[1]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; conta[3]                       ; conta[3]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.518  ; ac_state.Lett_12               ; ac_state.Lett_13               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.784      ;
+; 0.520  ; ac_state.Lett_10               ; ac_state.Lett_11               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.522  ; ac_state.Lett_27               ; ac_state.Lett_28               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.523  ; ac_state.Lett_26               ; ac_state.Lett_27               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523  ; ac_state.Lett_31               ; ac_state.wait_cnt              ; clk            ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.524  ; ac_state.Lett_30               ; ac_state.Lett_31               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524  ; ac_state.Lett_28               ; ac_state.Lett_29               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524  ; ac_state.Lett_24               ; ac_state.Lett_25               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524  ; ac_state.Lett_9                ; ac_state.Lett_10               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.525  ; ac_state.Lett_14               ; ac_state.Lett_15               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.526  ; ac_state.Lett_8                ; ac_state.Lett_9                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.527  ; ac_state.Lett_29               ; ac_state.Lett_30               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.793      ;
+; 0.528  ; ac_state.Lett_5                ; ac_state.Lett_6                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.529  ; ac_state.Lett_25               ; ac_state.Lett_26               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.795      ;
+; 0.529  ; ac_state.Lett_11               ; ac_state.Lett_12               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.795      ;
+; 0.530  ; ac_state.Lett_1                ; ac_state.Lett_2                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.660  ; ac_state.Lett_0                ; ac_state.Lett_1                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.926      ;
+; 0.661  ; ac_state.Lett_6                ; ac_state.Lett_7                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.927      ;
+; 0.665  ; ac_state.init                  ; ac_state.Turn_on               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.666  ; ac_state.Lett_13               ; ac_state.Lett_14               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.932      ;
+; 0.667  ; ac_state.Lett_15               ; ac_state.Func_Disp_Addr_cmd_40 ; clk            ; clk         ; 0.000        ; 0.000      ; 0.933      ;
+; 0.668  ; ac_state.wait_cnt              ; ac_state.shift                 ; clk            ; clk         ; 0.000        ; 0.000      ; 0.934      ;
+; 0.668  ; ac_state.Lett_22               ; ac_state.Lett_23               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.934      ;
+; 0.669  ; ac_state.Lett_23               ; ac_state.Lett_24               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.935      ;
+; 0.702  ; ac_state.Func_Disp_Addr_cmd_00 ; ac_state.Lett_0                ; clk            ; clk         ; 0.000        ; 0.001      ; 0.969      ;
+; 0.795  ; cnt[1]                         ; cnt[1]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.801  ; cnt[11]                        ; cnt[11]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.801  ; cnt[3]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802  ; cnt[5]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805  ; conta[0]                       ; conta[1]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806  ; cnt[9]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806  ; cnt[8]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806  ; cnt[7]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.813  ; cnt[12]                        ; cnt[12]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814  ; cnt[14]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.830  ; cnt[17]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.096      ;
+; 0.837  ; ac_state.Lett_16               ; ac_state.Lett_17               ; clk            ; clk         ; 0.000        ; 0.000      ; 1.103      ;
+; 0.838  ; cnt[6]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838  ; cnt[4]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838  ; cnt[2]                         ; cnt[2]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.845  ; cnt[13]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846  ; cnt[15]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.112      ;
+; 0.851  ; ac_state.Lett_4                ; ac_state.Lett_5                ; clk            ; clk         ; 0.000        ; 0.001      ; 1.118      ;
+; 0.852  ; cnt[18]                        ; cnt[18]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.118      ;
+; 0.854  ; cnt[16]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.120      ;
+; 0.859  ; ac_state.Lett_3                ; ac_state.Lett_4                ; clk            ; clk         ; 0.000        ; 0.000      ; 1.125      ;
+; 0.941  ; ac_state.Lett_21               ; ac_state.Lett_22               ; clk            ; clk         ; 0.000        ; -0.004     ; 1.203      ;
+; 0.943  ; ac_state.Func_Disp_Addr_cmd_40 ; ac_state.Lett_16               ; clk            ; clk         ; 0.000        ; 0.002      ; 1.211      ;
+; 1.066  ; ac_state.Lett_7                ; ac_state.Lett_8                ; clk            ; clk         ; 0.000        ; -0.002     ; 1.330      ;
+; 1.087  ; ac_state.Two_lines             ; ac_state.Func_Disp_Addr_cmd_00 ; clk            ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.090  ; ac_state.Lett_18               ; ac_state.Lett_19               ; clk            ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.110  ; ac_state.Turn_on               ; ac_state.Two_lines             ; clk            ; clk         ; 0.000        ; 0.001      ; 1.377      ;
+; 1.184  ; cnt[11]                        ; cnt[12]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.450      ;
+; 1.184  ; cnt[3]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.450      ;
+; 1.185  ; cnt[5]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.451      ;
+; 1.189  ; cnt[8]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189  ; cnt[7]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.196  ; cnt[12]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.462      ;
+; 1.197  ; cnt[14]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.463      ;
+; 1.224  ; cnt[2]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224  ; cnt[4]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224  ; cnt[6]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.490      ;
+; 1.231  ; cnt[13]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.232  ; cnt[15]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.240  ; cnt[16]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.245  ; conta[1]                       ; conta[2]                       ; clk            ; clk         ; 0.000        ; -0.003     ; 1.508      ;
+; 1.246  ; cnt[10]                        ; cnt[10]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.512      ;
+; 1.255  ; cnt[11]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.521      ;
+; 1.255  ; cnt[3]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.521      ;
+; 1.256  ; cnt[5]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.522      ;
+; 1.260  ; cnt[7]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.267  ; cnt[12]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.533      ;
+; 1.268  ; cnt[14]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.534      ;
+; 1.270  ; cnt[1]                         ; cnt[2]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.536      ;
+; 1.279  ; cnt[9]                         ; cnt[10]                        ; clk            ; clk         ; 0.000        ; 0.002      ; 1.547      ;
+; 1.294  ; cnt[0]                         ; cnt[1]                         ; clk            ; clk         ; 0.000        ; -0.002     ; 1.558      ;
+; 1.295  ; cnt[2]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.561      ;
+; 1.295  ; cnt[4]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.561      ;
+; 1.295  ; cnt[6]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.561      ;
+; 1.302  ; cnt[13]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.303  ; cnt[15]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.569      ;
+; 1.305  ; cnt[17]                        ; cnt[18]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.571      ;
+; 1.316  ; ac_state.Lett_20               ; ac_state.Lett_21               ; clk            ; clk         ; 0.000        ; 0.000      ; 1.582      ;
+; 1.326  ; cnt[11]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.592      ;
+; 1.326  ; cnt[3]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.592      ;
+; 1.327  ; cnt[5]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.593      ;
+; 1.333  ; cnt[8]                         ; cnt[10]                        ; clk            ; clk         ; 0.000        ; 0.002      ; 1.601      ;
+; 1.338  ; cnt[12]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.604      ;
+; 1.339  ; cnt[14]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 1.605      ;
+; 1.341  ; cnt[1]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.607      ;
+; 1.350  ; cnt[9]                         ; cnt[11]                        ; clk            ; clk         ; 0.000        ; 0.002      ; 1.618      ;
+; 1.366  ; cnt[2]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 1.632      ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'ac_state.shift'                                                                                             ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node     ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; 0.271 ; ac_state.Lett_18               ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 0.971      ;
+; 0.272 ; ac_state.Lett_21               ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 0.971      ;
+; 0.272 ; ac_state.Lett_19               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 0.972      ;
+; 0.610 ; ac_state.Lett_4                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.504      ; 1.114      ;
+; 0.667 ; ac_state.Lett_3                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.367      ;
+; 0.672 ; ac_state.Two_lines             ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 1.371      ;
+; 0.673 ; ac_state.Func_Disp_Addr_cmd_00 ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 1.372      ;
+; 0.678 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.701      ; 1.379      ;
+; 0.728 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.486      ; 1.214      ;
+; 0.762 ; ac_state.Lett_17               ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.479      ; 1.241      ;
+; 0.779 ; ac_state.wait_cnt              ; RW$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.478      ; 1.257      ;
+; 0.861 ; ac_state.Turn_on               ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.561      ;
+; 0.874 ; ac_state.init                  ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.701      ; 1.575      ;
+; 0.901 ; ac_state.Lett_1                ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.479      ; 1.380      ;
+; 0.928 ; ac_state.Two_lines             ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 1.627      ;
+; 0.988 ; ac_state.Lett_1                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.688      ;
+; 0.991 ; ac_state.Lett_20               ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.691      ;
+; 0.995 ; ac_state.Lett_20               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.695      ;
+; 0.997 ; ac_state.Lett_17               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 1.696      ;
+; 0.997 ; ac_state.Lett_20               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.701      ; 1.698      ;
+; 0.998 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.698      ;
+; 1.009 ; ac_state.Lett_3                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.504      ; 1.513      ;
+; 1.093 ; ac_state.Two_lines             ; DB[5]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.477      ; 1.570      ;
+; 1.105 ; ac_state.Lett_18               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.805      ;
+; 1.127 ; ac_state.Turn_on               ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.827      ;
+; 1.127 ; ac_state.Turn_on               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.702      ; 1.829      ;
+; 1.170 ; ac_state.Lett_4                ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 1.869      ;
+; 1.203 ; ac_state.Turn_on               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.505      ; 1.708      ;
+; 1.226 ; ac_state.wait_cnt              ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.703      ; 1.929      ;
+; 1.231 ; ac_state.wait_cnt              ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.705      ; 1.936      ;
+; 1.263 ; ac_state.Func_Disp_Addr_cmd_40 ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.963      ;
+; 1.268 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.702      ; 1.970      ;
+; 1.272 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.485      ; 1.757      ;
+; 1.274 ; ac_state.init                  ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.974      ;
+; 1.279 ; ac_state.init                  ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.702      ; 1.981      ;
+; 1.279 ; ac_state.wait_cnt              ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.489      ; 1.768      ;
+; 1.290 ; ac_state.Lett_21               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 1.990      ;
+; 1.300 ; ac_state.Lett_21               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.701      ; 2.001      ;
+; 1.318 ; ac_state.Lett_5                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 2.017      ;
+; 1.322 ; ac_state.Lett_5                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 2.021      ;
+; 1.324 ; ac_state.Lett_5                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 2.024      ;
+; 1.339 ; ac_state.Lett_17               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.503      ; 1.842      ;
+; 1.348 ; ac_state.Lett_19               ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.480      ; 1.828      ;
+; 1.419 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[5]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.478      ; 1.897      ;
+; 1.446 ; ac_state.Lett_18               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.504      ; 1.950      ;
+; 1.473 ; ac_state.Lett_1                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 2.172      ;
+; 1.542 ; ac_state.Lett_2                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 2.241      ;
+; 1.546 ; ac_state.Lett_2                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.699      ; 2.245      ;
+; 1.548 ; ac_state.Lett_2                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 2.248      ;
+; 1.632 ; ac_state.Lett_21               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.504      ; 2.136      ;
+; 1.815 ; ac_state.Lett_1                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.503      ; 2.318      ;
+; 1.848 ; ac_state.Lett_4                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 2.548      ;
+; 1.852 ; ac_state.Lett_4                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.700      ; 2.552      ;
+; 1.854 ; ac_state.Lett_4                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.701      ; 2.555      ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_00 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_00 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_40 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_40 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_0                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_0                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_1                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_1                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_10               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_10               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_11               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_11               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_12               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_12               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_13               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_13               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_14               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_14               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_15               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_15               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_16               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_16               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_17               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_17               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_18               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_18               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_19               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_19               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_2                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_2                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_20               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_20               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_21               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_21               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_22               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_22               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_23               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_23               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_24               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_24               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_25               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_25               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_26               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_26               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_27               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_27               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_28               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_28               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_29               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_29               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_3                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_3                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_30               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_30               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_31               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_31               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_4                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_4                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_5                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_5                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_6                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_6                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_7                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_7                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_8                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_8                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_9                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_9                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Turn_on               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Turn_on               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Two_lines             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Two_lines             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.init                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.init                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.shift                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.shift                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.wait_cnt              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.wait_cnt              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[10]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[10]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[11]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[11]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[12]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[12]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[13]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[13]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[14]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[14]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[15]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[15]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[16]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[16]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[17]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[17]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[18]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[18]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[1]                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'ac_state.shift'                                                                         ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock          ; Clock Edge ; Target                          ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[0]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[0]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[0]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[0]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[1]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[1]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[1]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[1]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[2]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[2]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[2]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[2]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[3]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[3]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[3]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[3]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[4]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[4]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[4]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[4]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[5]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[5]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[5]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[5]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[6]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[6]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[6]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[6]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[7]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[7]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[7]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[7]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RS$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RS$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RS$latch|datac                  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RS$latch|datac                  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RW$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RW$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RW$latch|datad                  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RW$latch|datad                  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|outclk   ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------+----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+----------------+--------+--------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 8.689  ; 8.689  ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 8.476  ; 8.476  ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 7.601  ; 7.601  ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 8.200  ; 8.200  ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 8.689  ; 8.689  ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 8.245  ; 8.245  ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 8.225  ; 8.225  ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 8.010  ; 8.010  ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 8.545  ; 8.545  ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 7.973  ; 7.973  ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 8.102  ; 8.102  ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 10.284 ; 10.284 ; Rise       ; clk             ;
++-----------+----------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-----------+----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+----------------+-------+-------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 7.601 ; 7.601 ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 8.476 ; 8.476 ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 7.601 ; 7.601 ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 8.200 ; 8.200 ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 8.689 ; 8.689 ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 8.245 ; 8.245 ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 8.225 ; 8.225 ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 8.010 ; 8.010 ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 8.545 ; 8.545 ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 7.973 ; 7.973 ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 8.102 ; 8.102 ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 8.619 ; 8.619 ; Rise       ; clk             ;
++-----------+----------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------+
+; Fast Model Setup Summary                ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -0.805 ; -34.080       ;
+; ac_state.shift ; -0.423 ; -1.697        ;
++----------------+--------+---------------+
+
+
++-----------------------------------------+
+; Fast Model Hold Summary                 ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -1.432 ; -1.432        ;
+; ac_state.shift ; 0.276  ; 0.000         ;
++----------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-----------------------------------------+
+; Fast Model Minimum Pulse Width Summary  ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clk            ; -1.380 ; -63.380       ;
+; ac_state.shift ; 0.500  ; 0.000         ;
++----------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                   ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.805 ; cnt[2]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.805 ; cnt[2]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 1.841      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.802 ; cnt[2]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.839      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.743 ; cnt[3]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 1.779      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.740 ; cnt[3]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.777      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.724 ; cnt[10]   ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.003      ; 1.759      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.721 ; cnt[10]   ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.757      ;
+; -0.704 ; cnt[2]    ; conta[0]                       ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Func_Disp_Addr_cmd_40 ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_15               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_14               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_13               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_12               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_11               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_10               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_9                ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Lett_8                ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.Turn_on               ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.704 ; cnt[2]    ; ac_state.init                  ; clk          ; clk         ; 1.000        ; 0.003      ; 1.739      ;
+; -0.697 ; cnt[2]    ; ac_state.wait_cnt              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.shift                 ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_31               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_30               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_29               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_28               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_27               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_26               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_25               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_24               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_23               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.697 ; cnt[2]    ; ac_state.Lett_22               ; clk          ; clk         ; 1.000        ; 0.000      ; 1.729      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.692 ; cnt[9]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 1.728      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_5                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_2                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_1                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.689 ; cnt[9]    ; ac_state.Lett_0                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.726      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_21               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_20               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_19               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_18               ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_4                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Lett_3                ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Func_Disp_Addr_cmd_00 ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.683 ; cnt[1]    ; ac_state.Two_lines             ; clk          ; clk         ; 1.000        ; 0.004      ; 1.719      ;
+; -0.680 ; cnt[1]    ; ac_state.Lett_17               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.717      ;
+; -0.680 ; cnt[1]    ; ac_state.Lett_16               ; clk          ; clk         ; 1.000        ; 0.005      ; 1.717      ;
+; -0.680 ; cnt[1]    ; ac_state.Lett_7                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.717      ;
+; -0.680 ; cnt[1]    ; ac_state.Lett_6                ; clk          ; clk         ; 1.000        ; 0.005      ; 1.717      ;
++--------+-----------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'ac_state.shift'                                                                                             ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node     ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; -0.423 ; ac_state.Lett_4                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.215      ; 1.165      ;
+; -0.368 ; ac_state.Lett_4                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.218      ; 1.171      ;
+; -0.346 ; ac_state.Lett_4                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 1.169      ;
+; -0.325 ; ac_state.Lett_1                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.126      ; 1.102      ;
+; -0.289 ; ac_state.Lett_2                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 1.030      ;
+; -0.234 ; ac_state.Lett_2                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 1.036      ;
+; -0.227 ; ac_state.Lett_21               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.127      ; 1.005      ;
+; -0.218 ; ac_state.Lett_1                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 1.040      ;
+; -0.212 ; ac_state.Lett_2                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 1.034      ;
+; -0.166 ; ac_state.Lett_5                ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.907      ;
+; -0.129 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.219      ; 0.933      ;
+; -0.120 ; ac_state.Lett_21               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.943      ;
+; -0.120 ; ac_state.init                  ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.219      ; 0.924      ;
+; -0.111 ; ac_state.Lett_5                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 0.913      ;
+; -0.110 ; ac_state.Func_Disp_Addr_cmd_40 ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 0.928      ;
+; -0.108 ; ac_state.Lett_18               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.127      ; 0.886      ;
+; -0.101 ; ac_state.init                  ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 0.919      ;
+; -0.092 ; ac_state.Lett_21               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.218      ; 0.895      ;
+; -0.091 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[5]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.111      ; 0.859      ;
+; -0.091 ; ac_state.wait_cnt              ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.222      ; 0.898      ;
+; -0.089 ; ac_state.Lett_5                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 0.911      ;
+; -0.077 ; ac_state.Lett_17               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.126      ; 0.854      ;
+; -0.072 ; ac_state.wait_cnt              ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.220      ; 0.893      ;
+; -0.053 ; ac_state.Lett_20               ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.215      ; 0.795      ;
+; -0.038 ; ac_state.Turn_on               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.219      ; 0.842      ;
+; -0.034 ; ac_state.Lett_4                ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 0.855      ;
+; -0.018 ; ac_state.Turn_on               ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.840      ;
+; -0.003 ; ac_state.Lett_18               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.826      ;
+; -0.001 ; ac_state.Turn_on               ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.128      ; 0.780      ;
+; 0.002  ; ac_state.Lett_20               ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.218      ; 0.801      ;
+; 0.007  ; ac_state.Func_Disp_Addr_cmd_00 ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.115      ; 0.832      ;
+; 0.008  ; ac_state.Lett_19               ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.113      ; 0.831      ;
+; 0.012  ; ac_state.Lett_1                ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 0.790      ;
+; 0.019  ; ac_state.init                  ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.216      ; 0.724      ;
+; 0.022  ; ac_state.Two_lines             ; DB[5]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.110      ; 0.745      ;
+; 0.024  ; ac_state.Lett_20               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.799      ;
+; 0.027  ; ac_state.wait_cnt              ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.119      ; 0.816      ;
+; 0.030  ; ac_state.Lett_17               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 0.792      ;
+; 0.032  ; ac_state.Func_Disp_Addr_cmd_40 ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.790      ;
+; 0.040  ; ac_state.Lett_3                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.127      ; 0.738      ;
+; 0.059  ; ac_state.Two_lines             ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.216      ; 0.758      ;
+; 0.098  ; ac_state.Turn_on               ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.217      ; 0.720      ;
+; 0.118  ; ac_state.Func_Disp_Addr_cmd_00 ; DB[4]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.218      ; 0.685      ;
+; 0.137  ; ac_state.Func_Disp_Addr_cmd_00 ; RS$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.216      ; 0.680      ;
+; 0.145  ; ac_state.Two_lines             ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 0.676      ;
+; 0.147  ; ac_state.Lett_3                ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.676      ;
+; 0.182  ; ac_state.wait_cnt              ; RW$latch    ; clk          ; ac_state.shift ; 1.000        ; 0.111      ; 0.586      ;
+; 0.204  ; ac_state.Lett_1                ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.112      ; 0.634      ;
+; 0.229  ; ac_state.Lett_4                ; DB[2]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.127      ; 0.549      ;
+; 0.233  ; ac_state.Lett_17               ; DB[1]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.112      ; 0.605      ;
+; 0.234  ; ac_state.Func_Disp_Addr_cmd_40 ; DB[7]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.116      ; 0.606      ;
+; 0.251  ; ac_state.Lett_18               ; DB[0]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.215      ; 0.491      ;
+; 0.330  ; ac_state.Lett_21               ; DB[3]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.213      ; 0.491      ;
+; 0.331  ; ac_state.Lett_19               ; DB[6]$latch ; clk          ; ac_state.shift ; 1.000        ; 0.214      ; 0.492      ;
++--------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                           ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+; -1.432 ; ac_state.shift                 ; ac_state.wait_cnt              ; ac_state.shift ; clk         ; 0.000        ; 1.661      ; 0.522      ;
+; -0.932 ; ac_state.shift                 ; ac_state.wait_cnt              ; ac_state.shift ; clk         ; -0.500       ; 1.661      ; 0.522      ;
+; 0.215  ; cnt[0]                         ; cnt[0]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; ac_state.wait_cnt              ; ac_state.wait_cnt              ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; conta[2]                       ; conta[2]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; conta[0]                       ; conta[0]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; conta[1]                       ; conta[1]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; conta[3]                       ; conta[3]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239  ; ac_state.Lett_12               ; ac_state.Lett_13               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240  ; ac_state.Lett_10               ; ac_state.Lett_11               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241  ; ac_state.Lett_27               ; ac_state.Lett_28               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241  ; ac_state.Lett_26               ; ac_state.Lett_27               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242  ; ac_state.Lett_31               ; ac_state.wait_cnt              ; clk            ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243  ; ac_state.Lett_30               ; ac_state.Lett_31               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; ac_state.Lett_28               ; ac_state.Lett_29               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; ac_state.Lett_24               ; ac_state.Lett_25               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; ac_state.Lett_14               ; ac_state.Lett_15               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; ac_state.Lett_9                ; ac_state.Lett_10               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243  ; ac_state.Lett_5                ; ac_state.Lett_6                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244  ; ac_state.Lett_29               ; ac_state.Lett_30               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244  ; ac_state.Lett_1                ; ac_state.Lett_2                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245  ; ac_state.Lett_8                ; ac_state.Lett_9                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246  ; ac_state.Lett_25               ; ac_state.Lett_26               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247  ; ac_state.Lett_11               ; ac_state.Lett_12               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.295  ; ac_state.init                  ; ac_state.Turn_on               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.447      ;
+; 0.318  ; ac_state.Func_Disp_Addr_cmd_00 ; ac_state.Lett_0                ; clk            ; clk         ; 0.000        ; 0.001      ; 0.471      ;
+; 0.320  ; ac_state.wait_cnt              ; ac_state.shift                 ; clk            ; clk         ; 0.000        ; 0.000      ; 0.472      ;
+; 0.325  ; ac_state.Lett_0                ; ac_state.Lett_1                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326  ; ac_state.Lett_6                ; ac_state.Lett_7                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.329  ; ac_state.Lett_22               ; ac_state.Lett_23               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.329  ; ac_state.Lett_13               ; ac_state.Lett_14               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.331  ; ac_state.Lett_23               ; ac_state.Lett_24               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.331  ; ac_state.Lett_15               ; ac_state.Func_Disp_Addr_cmd_40 ; clk            ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.358  ; cnt[5]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; cnt[3]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359  ; cnt[11]                        ; cnt[11]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; cnt[1]                         ; cnt[1]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.361  ; cnt[9]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; cnt[8]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; cnt[7]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; conta[0]                       ; conta[1]                       ; clk            ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.366  ; cnt[12]                        ; cnt[12]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368  ; cnt[14]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371  ; cnt[4]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371  ; cnt[2]                         ; cnt[2]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372  ; cnt[6]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372  ; cnt[17]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.377  ; cnt[13]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378  ; cnt[15]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378  ; cnt[18]                        ; cnt[18]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380  ; cnt[16]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.404  ; ac_state.Lett_16               ; ac_state.Lett_17               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.409  ; ac_state.Lett_4                ; ac_state.Lett_5                ; clk            ; clk         ; 0.000        ; 0.001      ; 0.562      ;
+; 0.418  ; ac_state.Lett_3                ; ac_state.Lett_4                ; clk            ; clk         ; 0.000        ; 0.000      ; 0.570      ;
+; 0.427  ; ac_state.Lett_21               ; ac_state.Lett_22               ; clk            ; clk         ; 0.000        ; -0.004     ; 0.575      ;
+; 0.427  ; ac_state.Func_Disp_Addr_cmd_40 ; ac_state.Lett_16               ; clk            ; clk         ; 0.000        ; 0.002      ; 0.581      ;
+; 0.496  ; cnt[3]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; cnt[5]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497  ; cnt[11]                        ; cnt[12]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.499  ; cnt[8]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499  ; cnt[7]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.504  ; cnt[12]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.656      ;
+; 0.506  ; cnt[14]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.658      ;
+; 0.507  ; ac_state.Lett_7                ; ac_state.Lett_8                ; clk            ; clk         ; 0.000        ; -0.002     ; 0.657      ;
+; 0.511  ; cnt[4]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511  ; cnt[2]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512  ; cnt[6]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.515  ; ac_state.Lett_18               ; ac_state.Lett_19               ; clk            ; clk         ; 0.000        ; 0.000      ; 0.667      ;
+; 0.517  ; cnt[13]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518  ; ac_state.Two_lines             ; ac_state.Func_Disp_Addr_cmd_00 ; clk            ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518  ; cnt[15]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.520  ; cnt[16]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.672      ;
+; 0.531  ; ac_state.Turn_on               ; ac_state.Two_lines             ; clk            ; clk         ; 0.000        ; 0.001      ; 0.684      ;
+; 0.531  ; cnt[3]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531  ; cnt[5]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532  ; cnt[11]                        ; cnt[13]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.534  ; cnt[7]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.539  ; cnt[12]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.691      ;
+; 0.541  ; cnt[14]                        ; cnt[16]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.545  ; cnt[9]                         ; cnt[10]                        ; clk            ; clk         ; 0.000        ; 0.001      ; 0.698      ;
+; 0.546  ; cnt[2]                         ; cnt[4]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546  ; cnt[4]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547  ; cnt[6]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.549  ; cnt[1]                         ; cnt[2]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.701      ;
+; 0.550  ; cnt[10]                        ; cnt[10]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.552  ; cnt[13]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.553  ; cnt[15]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.558  ; conta[1]                       ; conta[2]                       ; clk            ; clk         ; 0.000        ; -0.003     ; 0.707      ;
+; 0.565  ; cnt[17]                        ; cnt[18]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566  ; cnt[3]                         ; cnt[6]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566  ; cnt[5]                         ; cnt[8]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567  ; cnt[11]                        ; cnt[14]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.719      ;
+; 0.574  ; cnt[0]                         ; cnt[1]                         ; clk            ; clk         ; 0.000        ; -0.001     ; 0.725      ;
+; 0.574  ; cnt[12]                        ; cnt[15]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.726      ;
+; 0.576  ; cnt[14]                        ; cnt[17]                        ; clk            ; clk         ; 0.000        ; 0.000      ; 0.728      ;
+; 0.580  ; cnt[9]                         ; cnt[11]                        ; clk            ; clk         ; 0.000        ; 0.001      ; 0.733      ;
+; 0.581  ; cnt[2]                         ; cnt[5]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581  ; cnt[4]                         ; cnt[7]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.582  ; cnt[6]                         ; cnt[9]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.584  ; cnt[1]                         ; cnt[3]                         ; clk            ; clk         ; 0.000        ; 0.000      ; 0.736      ;
++--------+--------------------------------+--------------------------------+----------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'ac_state.shift'                                                                                             ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node     ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+; 0.276 ; ac_state.Lett_18               ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.215      ; 0.491      ;
+; 0.278 ; ac_state.Lett_21               ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 0.491      ;
+; 0.278 ; ac_state.Lett_19               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.492      ;
+; 0.422 ; ac_state.Lett_4                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.127      ; 0.549      ;
+; 0.462 ; ac_state.Lett_3                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.676      ;
+; 0.463 ; ac_state.Two_lines             ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 0.676      ;
+; 0.464 ; ac_state.Func_Disp_Addr_cmd_00 ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.216      ; 0.680      ;
+; 0.467 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.218      ; 0.685      ;
+; 0.475 ; ac_state.wait_cnt              ; RW$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.111      ; 0.586      ;
+; 0.490 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.116      ; 0.606      ;
+; 0.493 ; ac_state.Lett_17               ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.112      ; 0.605      ;
+; 0.503 ; ac_state.Turn_on               ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 0.720      ;
+; 0.508 ; ac_state.init                  ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.216      ; 0.724      ;
+; 0.522 ; ac_state.Lett_1                ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.112      ; 0.634      ;
+; 0.542 ; ac_state.Two_lines             ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.216      ; 0.758      ;
+; 0.573 ; ac_state.Lett_1                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 0.790      ;
+; 0.576 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.790      ;
+; 0.579 ; ac_state.Lett_17               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 0.792      ;
+; 0.580 ; ac_state.Lett_20               ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.215      ; 0.795      ;
+; 0.583 ; ac_state.Lett_20               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.218      ; 0.801      ;
+; 0.585 ; ac_state.Lett_20               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.799      ;
+; 0.611 ; ac_state.Lett_3                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.127      ; 0.738      ;
+; 0.612 ; ac_state.Lett_18               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.826      ;
+; 0.623 ; ac_state.Turn_on               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.219      ; 0.842      ;
+; 0.626 ; ac_state.Turn_on               ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.840      ;
+; 0.635 ; ac_state.Two_lines             ; DB[5]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.110      ; 0.745      ;
+; 0.642 ; ac_state.Lett_4                ; DB[3]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 0.855      ;
+; 0.652 ; ac_state.Turn_on               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.128      ; 0.780      ;
+; 0.673 ; ac_state.wait_cnt              ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.220      ; 0.893      ;
+; 0.676 ; ac_state.wait_cnt              ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.222      ; 0.898      ;
+; 0.677 ; ac_state.Lett_21               ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.218      ; 0.895      ;
+; 0.693 ; ac_state.Lett_5                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.907      ;
+; 0.696 ; ac_state.Lett_5                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 0.913      ;
+; 0.697 ; ac_state.wait_cnt              ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.119      ; 0.816      ;
+; 0.698 ; ac_state.Lett_5                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 0.911      ;
+; 0.702 ; ac_state.init                  ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 0.919      ;
+; 0.705 ; ac_state.init                  ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.219      ; 0.924      ;
+; 0.711 ; ac_state.Func_Disp_Addr_cmd_40 ; RS$latch    ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 0.928      ;
+; 0.714 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.219      ; 0.933      ;
+; 0.717 ; ac_state.Func_Disp_Addr_cmd_00 ; DB[7]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.115      ; 0.832      ;
+; 0.718 ; ac_state.Lett_19               ; DB[1]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.113      ; 0.831      ;
+; 0.728 ; ac_state.Lett_17               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.126      ; 0.854      ;
+; 0.729 ; ac_state.Lett_21               ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 0.943      ;
+; 0.748 ; ac_state.Func_Disp_Addr_cmd_40 ; DB[5]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.111      ; 0.859      ;
+; 0.759 ; ac_state.Lett_18               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.127      ; 0.886      ;
+; 0.816 ; ac_state.Lett_2                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 1.030      ;
+; 0.819 ; ac_state.Lett_2                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.217      ; 1.036      ;
+; 0.821 ; ac_state.Lett_2                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 1.034      ;
+; 0.827 ; ac_state.Lett_1                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.213      ; 1.040      ;
+; 0.878 ; ac_state.Lett_21               ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.127      ; 1.005      ;
+; 0.950 ; ac_state.Lett_4                ; DB[0]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.215      ; 1.165      ;
+; 0.953 ; ac_state.Lett_4                ; DB[4]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.218      ; 1.171      ;
+; 0.955 ; ac_state.Lett_4                ; DB[6]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.214      ; 1.169      ;
+; 0.976 ; ac_state.Lett_1                ; DB[2]$latch ; clk          ; ac_state.shift ; 0.000        ; 0.126      ; 1.102      ;
++-------+--------------------------------+-------------+--------------+----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_00 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_00 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_40 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Func_Disp_Addr_cmd_40 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_0                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_0                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_1                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_1                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_10               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_10               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_11               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_11               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_12               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_12               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_13               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_13               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_14               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_14               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_15               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_15               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_16               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_16               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_17               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_17               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_18               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_18               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_19               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_19               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_2                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_2                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_20               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_20               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_21               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_21               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_22               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_22               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_23               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_23               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_24               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_24               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_25               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_25               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_26               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_26               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_27               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_27               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_28               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_28               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_29               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_29               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_3                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_3                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_30               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_30               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_31               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_31               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_4                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_4                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_5                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_5                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_6                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_6                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_7                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_7                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_8                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_8                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Lett_9                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Lett_9                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Turn_on               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Turn_on               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.Two_lines             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.Two_lines             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.init                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.init                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.shift                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.shift                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ac_state.wait_cnt              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ac_state.wait_cnt              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[10]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[10]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[11]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[11]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[12]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[12]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[13]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[13]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[14]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[14]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[15]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[15]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[16]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[16]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[17]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[17]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[18]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cnt[18]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cnt[1]                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'ac_state.shift'                                                                         ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock          ; Clock Edge ; Target                          ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[0]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[0]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[0]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[0]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[1]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[1]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[1]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[1]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[2]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[2]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[2]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[2]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[3]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[3]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[3]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[3]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[4]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[4]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[4]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[4]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[5]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[5]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[5]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[5]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[6]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[6]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[6]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[6]$latch|datac               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[7]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[7]$latch                     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; DB[7]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; DB[7]$latch|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RS$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RS$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RS$latch|datac                  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RS$latch|datac                  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RW$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RW$latch                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; RW$latch|datad                  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; RW$latch|datad                  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; ac_state.shift ; Rise       ; ac_state.shift~clkctrl|outclk   ;
++-------+--------------+----------------+------------------+----------------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-----------+----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+----------------+-------+-------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 4.567 ; 4.567 ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 4.431 ; 4.431 ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 4.068 ; 4.068 ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 4.325 ; 4.325 ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 4.567 ; 4.567 ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 4.352 ; 4.352 ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 4.311 ; 4.311 ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 4.254 ; 4.254 ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 4.468 ; 4.468 ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 4.229 ; 4.229 ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 4.267 ; 4.267 ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 5.366 ; 5.366 ; Rise       ; clk             ;
++-----------+----------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-----------+----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+----------------+-------+-------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 4.068 ; 4.068 ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 4.431 ; 4.431 ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 4.068 ; 4.068 ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 4.325 ; 4.325 ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 4.567 ; 4.567 ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 4.352 ; 4.352 ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 4.311 ; 4.311 ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 4.254 ; 4.254 ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 4.468 ; 4.468 ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 4.229 ; 4.229 ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 4.267 ; 4.267 ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 4.635 ; 4.635 ; Rise       ; clk             ;
++-----------+----------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+----------+--------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -2.814   ; -2.103 ; N/A      ; N/A     ; -1.380              ;
+;  ac_state.shift  ; -1.984   ; 0.271  ; N/A      ; N/A     ; 0.500               ;
+;  clk             ; -2.814   ; -2.103 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -153.696 ; -2.103 ; 0.0      ; 0.0     ; -63.38              ;
+;  ac_state.shift  ; -13.439  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  clk             ; -140.257 ; -2.103 ; N/A      ; N/A     ; -63.380             ;
++------------------+----------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------+----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+----------------+--------+--------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 8.689  ; 8.689  ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 8.476  ; 8.476  ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 7.601  ; 7.601  ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 8.200  ; 8.200  ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 8.689  ; 8.689  ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 8.245  ; 8.245  ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 8.225  ; 8.225  ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 8.010  ; 8.010  ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 8.545  ; 8.545  ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 7.973  ; 7.973  ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 8.102  ; 8.102  ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 10.284 ; 10.284 ; Rise       ; clk             ;
++-----------+----------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-----------+----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port     ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+----------------+-------+-------+------------+-----------------+
+; DB[*]     ; ac_state.shift ; 4.068 ; 4.068 ; Rise       ; ac_state.shift  ;
+;  DB[0]    ; ac_state.shift ; 4.431 ; 4.431 ; Rise       ; ac_state.shift  ;
+;  DB[1]    ; ac_state.shift ; 4.068 ; 4.068 ; Rise       ; ac_state.shift  ;
+;  DB[2]    ; ac_state.shift ; 4.325 ; 4.325 ; Rise       ; ac_state.shift  ;
+;  DB[3]    ; ac_state.shift ; 4.567 ; 4.567 ; Rise       ; ac_state.shift  ;
+;  DB[4]    ; ac_state.shift ; 4.352 ; 4.352 ; Rise       ; ac_state.shift  ;
+;  DB[5]    ; ac_state.shift ; 4.311 ; 4.311 ; Rise       ; ac_state.shift  ;
+;  DB[6]    ; ac_state.shift ; 4.254 ; 4.254 ; Rise       ; ac_state.shift  ;
+;  DB[7]    ; ac_state.shift ; 4.468 ; 4.468 ; Rise       ; ac_state.shift  ;
+; RS        ; ac_state.shift ; 4.229 ; 4.229 ; Rise       ; ac_state.shift  ;
+; RW        ; ac_state.shift ; 4.267 ; 4.267 ; Rise       ; ac_state.shift  ;
+; E         ; clk            ; 4.635 ; 4.635 ; Rise       ; clk             ;
++-----------+----------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Transfers                                                             ;
++----------------+----------------+----------+----------+----------+----------+
+; From Clock     ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------+----------------+----------+----------+----------+----------+
+; clk            ; ac_state.shift ; 54       ; 0        ; 0        ; 0        ;
+; ac_state.shift ; clk            ; 1        ; 1        ; 0        ; 0        ;
+; clk            ; clk            ; 1064     ; 0        ; 0        ; 0        ;
++----------------+----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------+
+; Hold Transfers                                                              ;
++----------------+----------------+----------+----------+----------+----------+
+; From Clock     ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------+----------------+----------+----------+----------+----------+
+; clk            ; ac_state.shift ; 54       ; 0        ; 0        ; 0        ;
+; ac_state.shift ; clk            ; 1        ; 1        ; 0        ; 0        ;
+; clk            ; clk            ; 1064     ; 0        ; 0        ; 0        ;
++----------------+----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 62    ; 62   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 29    ; 29   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Oct 09 15:19:22 2019
+Info: Command: quartus_sta LCDfatma -c LCDfatma
+Info: qsta_default_script.tcl version: #4
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "RW$latch|combout" is a latch
+    Warning: Node "RS$latch|combout" is a latch
+    Warning: Node "DB[0]$latch|combout" is a latch
+    Warning: Node "DB[1]$latch|combout" is a latch
+    Warning: Node "DB[2]$latch|combout" is a latch
+    Warning: Node "DB[3]$latch|combout" is a latch
+    Warning: Node "DB[4]$latch|combout" is a latch
+    Warning: Node "DB[5]$latch|combout" is a latch
+    Warning: Node "DB[6]$latch|combout" is a latch
+    Warning: Node "DB[7]$latch|combout" is a latch
+Critical Warning: Synopsys Design Constraints File file not found: 'LCDfatma.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+    Info: create_clock -period 1.000 -name ac_state.shift ac_state.shift
+Info: Analyzing Slow Model
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -2.814
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -2.814      -140.257 clk 
+    Info:    -1.984       -13.439 ac_state.shift 
+Info: Worst-case hold slack is -2.103
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -2.103        -2.103 clk 
+    Info:     0.271         0.000 ac_state.shift 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.380
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.380       -63.380 clk 
+    Info:     0.500         0.000 ac_state.shift 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info: Started post-fitting delay annotation
+Warning: Found 13 output pins without output pin load capacitance assignment
+    Info: Pin "E" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "RW" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "RS" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "DB[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "ON" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "BLON" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Info: Delay annotation completed successfully
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -0.805
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -0.805       -34.080 clk 
+    Info:    -0.423        -1.697 ac_state.shift 
+Info: Worst-case hold slack is -1.432
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.432        -1.432 clk 
+    Info:     0.276         0.000 ac_state.shift 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.380
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.380       -63.380 clk 
+    Info:     0.500         0.000 ac_state.shift 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4499 megabytes
+    Info: Processing ended: Wed Oct 09 15:19:24 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

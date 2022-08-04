@@ -1,0 +1,204 @@
+module LCDfatma(E,RW,RS,DB,ON,BLON,reset,clk);
+input reset,clk;
+//input [7:0] db;
+output E,RW,RS,ON,BLON;
+output [7:0] DB;
+wire enable_clk,e,rw,rs,E,BLON,ON, trigger;
+
+reg [18:0] cnt;
+reg [6:0] ac_state;   // FSM state
+reg RW,RS;
+reg [7:0] DB;
+reg [3:0] conta; 
+
+
+
+parameter [7:0]
+A_code = 8'b0100_0001,
+B_code = 8'b0100_0010,
+C_code = 8'b0100_0011,
+D_code = 8'b0100_0100,
+E_code = 8'b0100_0101,
+F_code = 8'b0100_0110,
+G_code = 8'b0100_0111,
+H_code = 8'b0100_1000,
+I_code = 8'b0100_1001,
+J_code = 8'b0100_1010,
+K_code = 8'b0100_1011,
+L_code = 8'b0100_1100,
+M_code = 8'b0100_1101,
+N_code = 8'b0100_1110,
+O_code = 8'b0100_1111,
+P_code = 8'b0101_0000,
+Q_code = 8'b0101_0001,
+R_code = 8'b0101_0010,
+S_code = 8'b0101_0011,
+T_code = 8'b0101_0100,
+U_code = 8'b0101_0101,
+V_code = 8'b0101_0110,
+W_code = 8'b0101_0111,
+X_code = 8'b0101_1000,
+Y_code = 8'b0101_1001,
+Z_code = 8'b0101_1010,
+blank_code = 8'b0001_0000;
+
+
+parameter [6:0]     // FSM states
+init        = 6'b000000,
+Turn_on     = 6'b000001,
+Two_lines   = 6'b000010,
+Func_Disp_Addr_cmd_00   = 6'b100011,
+Func_Disp_Addr_cmd_40   = 6'b100100,
+wait_cnt    = 6'b100101,
+shift       = 6'b100111,
+Lett_0      = 6'b000011,
+Lett_1      = 6'b000100,
+Lett_2      = 6'b000101,
+Lett_3      = 6'b000110,
+Lett_4      = 6'b000111,
+Lett_5      = 6'b001000,
+Lett_6      = 6'b001001,
+Lett_7      = 6'b001010,
+Lett_8      = 6'b001011,
+Lett_9      = 6'b001100,
+Lett_10     = 6'b001101,
+Lett_11     = 6'b001110,
+Lett_12     = 6'b001111,
+Lett_13     = 6'b010000,
+Lett_14     = 6'b010001,
+Lett_15     = 6'b010010,
+Lett_16     = 6'b010011,
+Lett_17     = 6'b010100,
+Lett_18     = 6'b010101,
+Lett_19     = 6'b010110,
+Lett_20     = 6'b010111,
+Lett_21     = 6'b011000,
+Lett_22     = 6'b011001,
+Lett_23     = 6'b011010,
+Lett_24     = 6'b011011,
+Lett_25     = 6'b011100,
+Lett_26     = 6'b011101,
+Lett_27     = 6'b011110,
+Lett_28     = 6'b011111,
+Lett_29     = 6'b100000,
+Lett_30     = 6'b100001,
+Lett_31     = 6'b100010;
+
+
+
+// Description section
+
+assign BLON = 1'b1;   // switch ON backlight
+assign ON = 1'b1;     // switch ON LCD
+assign E = enable_clk;
+
+
+// Generates low frequency enabling clock
+always @( posedge reset or posedge clk)
+begin
+if (reset)
+	cnt <= 19'b0;
+else
+	cnt<=cnt+1'b1;
+end
+assign enable_clk = (cnt==19'b111_1111_1111_1111_1111);
+
+
+// Counter
+always @( posedge reset or posedge clk)
+begin
+if (reset) 
+	conta<=4'b0000;
+else 
+	if (enable_clk)
+	begin
+		if (conta==4'd15)
+			conta<=4'b0000;
+		else
+			conta<=conta +1'b1;
+	end	
+end
+
+assign trigger = (conta==4'd15);
+
+//FSM
+always @( posedge reset or posedge clk)
+begin
+if (reset)
+	ac_state<=init;
+else
+if (enable_clk)
+	case (ac_state)
+	init        : ac_state<=Turn_on;
+	Turn_on     : ac_state<=Two_lines;
+	Two_lines   : ac_state<=Func_Disp_Addr_cmd_00;
+	Func_Disp_Addr_cmd_00   : ac_state<=Lett_0;
+	Lett_0      : ac_state<=Lett_1;		Lett_1      : ac_state<=Lett_2;
+	Lett_2      : ac_state<=Lett_3;		Lett_3      : ac_state<=Lett_4;
+	Lett_4      : ac_state<=Lett_5;		Lett_5      : ac_state<=Lett_6;
+	Lett_6      : ac_state<=Lett_7;		Lett_7      : ac_state<=Lett_8;
+	Lett_8      : ac_state<=Lett_9;		Lett_9      : ac_state<=Lett_10;
+	Lett_10      : ac_state<=Lett_11;	Lett_11      : ac_state<=Lett_12;
+	Lett_12      : ac_state<=Lett_13;	Lett_13      : ac_state<=Lett_14;
+	Lett_14      : ac_state<=Lett_15;	Lett_15      : ac_state<=Func_Disp_Addr_cmd_40;
+	Func_Disp_Addr_cmd_40      : ac_state<=Lett_16;
+	Lett_16      : ac_state<=Lett_17;	Lett_17      : ac_state<=Lett_18;
+	Lett_18      : ac_state<=Lett_19;	Lett_19      : ac_state<=Lett_20;
+	Lett_20      : ac_state<=Lett_21;	Lett_21      : ac_state<=Lett_22;
+	Lett_22      : ac_state<=Lett_23;	Lett_23      : ac_state<=Lett_24;
+	Lett_24      : ac_state<=Lett_25;	Lett_25      : ac_state<=Lett_26;
+	Lett_26      : ac_state<=Lett_27;	Lett_27      : ac_state<=Lett_28;
+	Lett_28      : ac_state<=Lett_29;	Lett_29      : ac_state<=Lett_30;
+	Lett_30      : ac_state<=Lett_31;	Lett_31      : ac_state<=wait_cnt;
+	wait_cnt     : ac_state<= (trigger) ? shift : wait_cnt;
+	shift        : ac_state<= wait_cnt;
+	endcase
+end
+
+// Moore comb logic
+always @(ac_state)
+begin
+case (ac_state)
+init        : {DB,RW,RS}<=10'b0000_0001_0_0;
+Turn_on     : {DB,RW,RS}<=10'b0000_1100_0_0;
+Two_lines    : {DB,RW,RS}<=10'b0011_1000_0_0;
+Func_Disp_Addr_cmd_00    : {DB,RW,RS}<=10'b1000_0000_0_0;
+Func_Disp_Addr_cmd_40    : {DB,RW,RS}<=10'b1010_1000_0_0;
+Lett_0       : {DB,RW,RS}<={blank_code,2'b01};
+Lett_1       : {DB,RW,RS}<={F_code,2'b01};
+Lett_2       : {DB,RW,RS}<={A_code,2'b01};
+Lett_3       : {DB,RW,RS}<={T_code,2'b01};
+Lett_4       : {DB,RW,RS}<={M_code,2'b01};
+Lett_5       : {DB,RW,RS}<={A_code,2'b01};
+Lett_6       : {DB,RW,RS}<={blank_code,2'b01};
+Lett_7       : {DB,RW,RS}<={blank_code,2'b01};
+Lett_8       : {DB,RW,RS}<={blank_code,2'b01};
+Lett_9       : {DB,RW,RS}<={blank_code,2'b01};
+Lett_10      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_11      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_12      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_13      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_14      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_15      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_16      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_17      : {DB,RW,RS}<={V_code,2'b01};
+Lett_18      : {DB,RW,RS}<={U_code,2'b01};
+Lett_19      : {DB,RW,RS}<={R_code,2'b01};
+Lett_20      : {DB,RW,RS}<={A_code,2'b01};
+Lett_21      : {DB,RW,RS}<={L_code,2'b01};
+Lett_22      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_23      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_24      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_25      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_26      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_27      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_28      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_29      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_30      : {DB,RW,RS}<={blank_code,2'b01};
+Lett_31      : {DB,RW,RS}<={blank_code,2'b01};
+wait_cnt     : {DB,RW,RS}<=10'b1000_0000_10;
+//shift        : {DB,RW,RS}<=10'b0001_1000_00;
+endcase
+end
+
+endmodule

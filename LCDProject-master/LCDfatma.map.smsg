@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at LCDfatma.v(4): object "E" differs only in case from object "e" in the same scope
+Info (10281): Verilog HDL Declaration information at LCDfatma.v(4): object "RW" differs only in case from object "rw" in the same scope
+Info (10281): Verilog HDL Declaration information at LCDfatma.v(4): object "RS" differs only in case from object "rs" in the same scope
