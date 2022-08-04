@@ -1,0 +1,9 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/de2/lpm_shiftreg0 {C:/de2/lpm_shiftreg0/lpm_shiftreg0.v}
+

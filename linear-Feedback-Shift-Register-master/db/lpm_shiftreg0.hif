@@ -1,0 +1,166 @@
+Quartus II 64-Bit
+Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
+14
+1046
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+lpm_shiftreg0
+# storage
+db|lpm_shiftreg0.(0).cnf
+db|lpm_shiftreg0.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+lpm_shiftreg0.v
+5296bd94efaa7d4249cba76c83cab
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+lpm_shiftreg
+# storage
+db|lpm_shiftreg0.(1).cnf
+db|lpm_shiftreg0.(1).cnf
+# case_insensitive
+# source_file
+|altera|10.1sp1|quartus|libraries|megafunctions|lpm_shiftreg.tdf
+ba522854eb521cc3dd17577a11762e6
+7
+# user_parameter {
+LPM_WIDTH
+16
+PARAMETER_SIGNED_DEC
+USR
+LPM_DIRECTION
+LEFT
+PARAMETER_UNKNOWN
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+LPM_SVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+shiftin
+-1
+3
+sclr
+-1
+3
+q
+-1
+3
+clock
+-1
+3
+}
+# hierarchies {
+lpm_shiftreg:LPM_SHIFTREG_component
+}
+# macro_sequence
+
+# end
+# entity
+lpm_shiftreg0_tb
+# storage
+db|lpm_shiftreg0.(2).cnf
+db|lpm_shiftreg0.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+lpm_shiftreg0_tb.v
+593e9f72fa422ec9eff51be56f4fe4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+period
+20
+PARAMETER_SIGNED_DEC
+DEF
+}
+# macro_sequence
+
+# end
+# complete
+

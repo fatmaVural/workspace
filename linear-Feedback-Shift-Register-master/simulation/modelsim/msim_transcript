@@ -1,0 +1,41 @@
+# Reading C:/altera/10.1sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do lpm_shiftreg0_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\10.1sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\10.1sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/de2/lpm_shiftreg0 {C:/de2/lpm_shiftreg0/lpm_shiftreg0.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module lpm_shiftreg0
+# 
+# Top level modules:
+# 	lpm_shiftreg0
+# 
+# vlog -vlog01compat -work work +incdir+C:/de2/lpm_shiftreg0 {C:/de2/lpm_shiftreg0/lpm_shiftreg0_tb.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module lpm_shiftreg0_tb
+# 
+# Top level modules:
+# 	lpm_shiftreg0_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc" lpm_shiftreg0_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps lpm_shiftreg0_tb 
+# Loading work.lpm_shiftreg0_tb
+# Loading work.lpm_shiftreg0
+# Loading lpm_ver.lpm_shiftreg
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module lpm_shiftreg0_tb at C:/de2/lpm_shiftreg0/lpm_shiftreg0_tb.v line 19
+# Simulation Breakpoint: Break in Module lpm_shiftreg0_tb at C:/de2/lpm_shiftreg0/lpm_shiftreg0_tb.v line 19
+# MACRO ./lpm_shiftreg0_run_msim_rtl_verilog.do PAUSED at line 17
