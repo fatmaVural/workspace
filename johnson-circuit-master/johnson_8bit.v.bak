@@ -1,0 +1,79 @@
+module 8bit_johnson(A,din,clk,reset,DEC,UNITS);
+input [7:0]A;
+input din,clk,reset;
+output [6:0]DEC;
+output [6:0]UNITS;
+
+wire din,clk,reset;
+reg [6:0]DEC;
+reg [6:0]UNITS;
+reg [3:0]Q;
+wire din2;
+reg [1:0]D1;
+
+assign din2 =(din | (~Q[7])); 
+
+always @(posedge clk)  //#1
+begin
+if(reset)
+   Q[0]<=1'b0;
+ else
+   Q[0]<=din2;
+ 
+end
+
+always @(posedge clk)  //#2
+begin
+
+ if(reset)
+   Q[1]<=1'b0;
+ else
+   Q[1]<=Q[0];
+ 
+end
+
+always @(posedge clk)  //#3
+begin
+
+ if(reset)
+   Q[2]<=1'b0;
+ else
+   Q[2]<=Q[1];
+ 
+end
+
+always @(posedge clk)  //#4
+begin
+
+ if(reset)
+   Q[3]<=1'b0;
+ else
+   Q[3]<=Q[2];
+ 
+end
+
+assign sum =(A + (Q*8'b10));
+
+always @(sum)
+begin
+ if(sum >= 0 && sum <= 9)
+   D1 <= 2'b00;
+ else if(sum >= 9 && sum <= 19)
+   D1 <= 2'b01;
+ else if(sum >= 19 && sum <= 29)
+   D1 <= 2'b10;
+ else 
+   D1 <= 2'b11;
+end
+
+always @(D1)
+begin
+   case(D1)
+	2'b00 : DEC = 7'b1000000;   //0
+   2'b01 : DEC = 7'b1111001;   //1
+   2'b10 : DEC = 7'b0100100;   //2
+   2'b11 : DEC = 7'b0110000;   //3
+  endcase
+end
+
+
